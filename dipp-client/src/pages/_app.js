@@ -1,5 +1,15 @@
-import '@/styles/globals.css'
+import '@/styles/global.css'
+import Layout from '../../componets/Layout'
+import {Montserrat} from 'next/font/google'
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const bodyFont = Montserrat()
+
+export default function App({ Component, pageProps}) {
+  return( 
+  <main className={bodyFont.className}>
+  <Layout>
+    <Component {...pageProps} />
+  </Layout>
+  </main>
+  )
 }

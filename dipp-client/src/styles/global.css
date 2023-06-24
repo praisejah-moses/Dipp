@@ -1,0 +1,215 @@
+/* GENERIC ELEMENTS */
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+body{  
+  background-color: #f4f7fc;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.loader {
+  margin: 30px auto;
+  border: 9px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+/* ........................ */
+
+/* HEADER STYLES */
+header{
+  background-color: #DFFFD8;
+  padding: 10px 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.header-container,.branding{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.branding h1{
+  margin-left: 5px;
+  font-size: 25px;
+}
+nav span{
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0px 0px 0px 20px;
+}
+
+/* CRYPTO STATS STYLES */
+.stats-container{
+  margin: 50px auto 10px;
+  padding: 5px 50px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid gainsboro;
+}
+.stat{
+  color: #002358;
+  font-weight: 100;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.stat p:nth-child(2){
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+/* CARD STYLES */
+.card-container{
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 100px;
+}
+.card{
+  width: 250px;
+  font-size: 12px;
+  padding: 9px;
+  border-radius: 6px;
+  background-color: #f4f5f4;
+  box-shadow: 0px 5px 10px 2px rgba(139, 139, 139, 0.1);
+}
+.card-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #EEEEEE;
+}
+.card-title{
+  display: flex;
+  align-items: center;
+}
+#link{
+  text-decoration: none;
+  color: #30A2FF;
+  font-size: 11px;
+}
+.coin-list{
+  margin: 10px 0px;
+  text-overflow: ellipsis;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 10% 45% 40%;
+  font-size: 12px;
+  align-items: center;
+}
+.coin-list img{
+  width: 20px;
+  border-radius: 99px;
+}
+.coin-list span{
+  text-align: right;
+}
+.coin-list p span{
+  color: gray;
+}
+
+/* CRYPTO LISTING*/
+.prices-container{
+  font-size: 12px;
+  padding: 50px 100px;
+}
+.prices-container h1{
+  margin: 30px 0px;
+}
+.prices-container table{
+  width: 100%;
+  text-align: left;
+  padding: 10px 4px;
+}
+tbody span:nth-child(2){
+  color: gray;
+  margin-inline-start: 5px;
+}
+table div{
+  display: flex;
+  align-items: center;
+}
+table img{
+  width: 25px;
+  margin-inline-end: 5px;
+}
+td{
+  padding: 20px 20px;
+  border-bottom: 1px solid #ddd;
+}
+th{
+  text-align: left;
+  padding: 5px 20px;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+tbody tr:hover{
+  background-color: #dbe6d8;
+}
+
+/* FOOTER */
+footer{
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  background-color: #DFFFD8;
+}
+
+/* LOADER ANIMATION */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* RESPONSIVE STYLING FOR MOBILE */
+@media only screen and (max-width: 700px) {
+  header {
+    padding: 10px 10px;
+  }
+  .branding img{
+    width: 25px;
+    height: auto;
+  }
+  nav{
+    display: none;
+  }
+  .stats-container{
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+  }
+  .card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .card{
+    margin: 20px;
+  }
+  .prices-container{
+    padding: 10px 10px;
+  }
+  td{
+    padding-right: 2px;
+  }
+  #large{
+    display: none;
+  }
+  .cryptoName{
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: flex-start;  
+  }
+  tbody span:nth-child(2){
+    margin-inline-start: 0px;
+  }
+}
