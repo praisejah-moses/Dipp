@@ -1,9 +1,9 @@
-import {getCryptos,formatToCompact} from "../services/getMarketData"
+import {getCryptos} from "../services/getMarketData"
 
 export default function Cryptos () {
-    const {dataFormat}=formatToCompact
+    const dataFormat = Intl.NumberFormat('en', { notation: 'compact',compactDisplay:'long' })
     const {data,error,isLoading}=getCryptos()
-    
+
     if(data){
     return (
         <div className="prices-container">
@@ -23,10 +23,10 @@ export default function Cryptos () {
                         data.data.coins.map((data)=>(    
                             <tr key={data.uuid} >
                                 <td width={100}><div><img src={data.iconUrl} alt="" /> <div className="cryptoName"><span>{data.name}</span> <span>{data.symbol}</span> </div></div></td>
-                                <td>{'$ '+parseFloat(data.price).toFixed(3)}</td>
+                                <td>{'$ '+ (parseFloat(data.price)).toLocaleString('en-US')}</td>
                                 <td id="large">{'$ '+ dataFormat.format(parseInt(data.marketCap))}</td>
                                 <td width={30}>{data.change + '%'}</td>
-                            </tr>
+                            </tr>  
                         ))}   
                     </tbody>
                 </table>    

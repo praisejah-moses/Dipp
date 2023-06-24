@@ -55,7 +55,6 @@ export  function formatToCompact (data) {
     // RETURNING THE INTEGERS IN COMPACT FORMAT
     return (
         {
-            dataFormat: dataFormat,
             totalMarketCap:(dataFormat.format(totalMarketCap)),
             totalMarketVolume:(dataFormat.format(totalMarketVolume))
         }
